@@ -1,0 +1,133 @@
+﻿@model Usermanagement.Models.riyan_user_details
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h3 style="margin-left:45.5%; font-family:'Comic Sans MS'; color:black">Register</h3>
+
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1520872192309-8d36492fda51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+        background-size: cover;
+    }
+
+    #pr {
+        padding-left: 63%;
+        padding-top: 5%;
+    }
+
+    #us {
+        padding-right: 10px;
+        border-radius: 150px;
+        margin: 5px;
+        height: 35px;
+       
+    }
+
+    #birthday {
+        padding-right: 10px;
+        border-radius: 50px;
+        margin: 5px;
+        height: 35px;
+    }
+
+    #pl {
+        padding-right: 10px;
+        border-radius: 50px;
+        margin: 5px;
+        height: 35px;
+    }
+
+    #email {
+        padding-right: 10px;
+        border-radius: 50px;
+        margin: 5px;
+        height: 35px;
+    }
+
+    button {
+        margin-left: 50px;
+        color: darkslategrey;
+        border-radius: 10px;
+        width: 100px;
+        height: 40px;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="padding-right: 120px; font-family: monospace; font-size: 18px; color: black; border-radius:30px;" id="us">
+            @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group" style="padding-right: 49px; font-family: monospace; font-size: 18px; color: black">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group" style="padding-right: 49px; font-family: monospace; font-size: 18px; color: black">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="padding-right: 49px; font-family: monospace; font-size: 18px; color: black">
+            @Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10" style="padding-right: 49px; font-family: monospace; font-size: 18px;">
+                @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" >
+            <label for="gender" style="padding-left: 110px; font-family: monospace; font-size: 18px; color: black">Gender  :  </label>
+            <select style="padding-right:100px; border:2px solid black; padding-left:10px;" name="gender" id="pl" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+        </div>
+
+        <div class="form-group" style="padding-right: 49px; font-family: monospace; font-size: 18px; color: black; border-radius:50px">
+            @Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" id="button">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-default" />
+               
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

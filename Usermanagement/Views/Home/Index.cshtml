@@ -1,0 +1,49 @@
+﻿
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1525267982334-1e5a3ab14e4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+        background-repeat: no-repeat;
+        background-size: cover;
+       }
+
+    #rt {
+        padding-left: 60%;
+        padding-top: 25%;
+    }
+   button{
+       margin-left:50px;
+       color:darkslategrey;
+       border-radius:10px;
+       width:100px
+
+   }
+   #fp{
+       margin-left:24px;
+   }
+   #rg{
+       padding-left:2%;
+       
+       
+   }
+  
+
+    </style> 
+
+<body>
+    <div id="rt" >
+        <form>
+            
+            <label style="padding-right:47px; font-size:18px; color:black; font-family:monospace"> User   : </label><input style="border-radius:20px; height:30px; text-shadow:100px;" type="text" placeholder="Username"> <br> <br>
+            <label style="padding-right: 19px; font-size: 18px; color: black; font-family: monospace">  Password:  </label><input style="border-radius:20px; height="30px" type="password" placeholder="Password"> <br> <br> <br>
+            <button>Login</button>
+            <button type="button" style="width:140px" id="fp" onclick="location.href='@Url.Action("pass","forgotpassword")'">Forgot Password</button> <br> <br>
+            <label style="margin-left: 45.5%; color:White" class="message">New User... </label> <a style="padding-right:5px; font-size:15px; color:white;"@Html.ActionLink("Create an Account", "create", "riyan_user_details")</a><br><br>
+
+
+
+        </form>
+
+
+       
+    </div>
+</body>
